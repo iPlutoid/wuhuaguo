@@ -1,4 +1,19 @@
-production:
+#need production config
+
+test:
   sessions:
     default:
-      uri: <%= ENV['MONGOHQ_URL'] %>
+      database: wuhuaguo_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+        max_retries: 1
+        retry_interval: 0
+
+development:
+  sessions:
+    default:
+      database: wuhuaguo_development
+      hosts:
+        - localhost:27017

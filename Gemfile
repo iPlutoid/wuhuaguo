@@ -4,9 +4,6 @@ ruby '2.0.0'
 gem "rails", "~> 3.2.15.rc2"
 
 group :development, :test do
-  gem "mongo", "~> 1.9.2"
-  gem "bson_ext", "~> 1.9.2"
-  gem "mongoid", "~> 3.1.5"
   gem 'rspec-rails', '2.13.1'
   gem 'guard-rspec', '2.5.0'
 end
@@ -24,6 +21,9 @@ group :test do
   # gem 'libnotify', '0.8.0'
 end
 
+gem "mongo", "~> 1.9.2"
+gem "bson_ext", "~> 1.9.2"
+gem "mongoid", "~> 3.1.5"
 gem "sass-rails", "~> 3.2.6"
 gem 'uglifier', '2.1.1'
 gem "coffee-rails", "~> 3.2.2"
@@ -36,7 +36,6 @@ group :doc do
 end
 
 group :production do
-  gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
 
