@@ -10,10 +10,14 @@ group :development, :test do
 end
 
 group :test do
-  gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+
+  #gem 'factory_girl_rails'
+
   # OS X
-  gem 'growl', '1.0.3'
+  #gem 'growl', '1.0.3'
   # Linux
   # gem 'libnotify', '0.8.0'
 end
