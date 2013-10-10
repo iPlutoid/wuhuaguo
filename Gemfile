@@ -11,6 +11,7 @@ end
 group :test do
   gem 'capybara', '2.1.0'
   gem 'cucumber-rails', :require => false
+  gem "mongoid-rspec", "~> 1.8.2"
   gem 'database_cleaner'
 
   #gem 'factory_girl_rails'
