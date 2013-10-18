@@ -4,7 +4,8 @@ ruby '2.0.0'
 gem "rails", "~> 3.2.15.rc2"
 
 group :development, :test do
-  gem 'rspec-rails', '2.13.1'
+  gem "rspec-rails", "~> 2.14.0"
+  gem "rspec-expectations", "~> 2.14.0", :require => false
   gem 'guard-rspec', '2.5.0'
 end
 
@@ -13,16 +14,16 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem "mongoid-rspec", "~> 1.8.2"
   gem 'database_cleaner'
+  gem "mocha", "~> 0.14.0", :require => false
 
   #gem 'factory_girl_rails'
 
   # OS X
-  #gem 'growl', '1.0.3'
+  gem 'growl', '1.0.3'
   # Linux
   # gem 'libnotify', '0.8.0'
 end
 
-gem "mocha", "~> 0.13.0", :require => false
 gem "mongo", "~> 1.9.2"
 gem "bson_ext", "~> 1.9.2"
 gem "mongoid", "~> 3.1.5"

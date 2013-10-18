@@ -82,34 +82,17 @@ describe QuestionsController do
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved question as @question" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Question.any_instance.stub(:save).and_return(false)
-        post :create, {:question => { "title" => "invalid value" }}, valid_session
-        assigns(:question).should be_a_new(Question)
-      end
-
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Question.any_instance.stub(:save).and_return(false)
         post :create, {:question => { "title" => "invalid value" }}, valid_session
-        response.should render_template("new")
+        response.should render_template(action:"new")
       end
     end
   end
 
   describe "PUT update" do
     describe "with valid params" do
-      it "updates the requested question" do
-        question = Question.create! valid_attributes
-        # Assuming there are no other questions in the database, this
-        # specifies that the Question created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Question.any_instance.should_receive(:update_attributes).with({ "title" => "MyString" })
-        put :update, {:id => question.to_param, :question => { "title" => "MyString" }}, valid_session
-      end
-
       it "assigns the requested question as @question" do
         question = Question.create! valid_attributes
         put :update, {:id => question.to_param, :question => valid_attributes}, valid_session
@@ -137,7 +120,7 @@ describe QuestionsController do
         # Trigger the behavior that occurs when invalid params are submitted
         Question.any_instance.stub(:save).and_return(false)
         put :update, {:id => question.to_param, :question => { "title" => "invalid value" }}, valid_session
-        response.should render_template("edit")
+        response.should render_template(action:"edit")
       end
     end
   end

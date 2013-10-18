@@ -13,6 +13,7 @@ Bundler.require(:default, Rails.env)
 module Wuhuaguo
   class Application < Rails::Application
     config.mongoid.logger = Logger.new($stdout, :warn)
+    config.secret_token='61991755fbf22c91e3297c45ae94d6da6505675e62c901e6c72e677b5eca1c676b7e78e532133b36665479ec9e45ce760a7aa1a34cd64c28055ff8be0dc3e1ef'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
